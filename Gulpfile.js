@@ -26,12 +26,6 @@ var pkg = require("./package.json"),
     paths = widgetBuilderHelper.generatePaths(pkg),
     xmlversion = widgetBuilderHelper.xmlversion;
 
-gulp.task("default", ['build'], function() {
-    gulp.watch("./src/**/*", ["compress"]);
-    gulp.watch("./src/**/*.js", ["copy:js"]);
-    gulp.watch("./src/**/*.html", ["copy:html"])
-});
-
 gulp.task("clean", function () {
     return del([
         paths.WIDGET_TEST_DEST,
@@ -39,12 +33,12 @@ gulp.task("clean", function () {
     ], { force: true });
 });
 
-gulp.task("compress", ["clean"], function () {
+gulp.task("compress", gulp.series("clean", function () {
     return gulp.src("src/**/*")
         .pipe(zip(pkg.name + ".mpk"))
         .pipe(gulp.dest(paths.TEST_WIDGETS_FOLDER))
         .pipe(gulp.dest("dist"));
-});
+}));
 
 gulp.task("copy:js", function () {
     return gulp.src(["./src/**/*.js"])
@@ -101,5 +95,13 @@ gulp.task("modeler", function (cb) {
     widgetBuilderHelper.runmodeler(MODELER_PATH, MODELER_ARGS, paths.TEST_PATH, cb);
 });
 
-gulp.task("build", ["compress"]);
-gulp.task("version", ["version:xml", "version:json"]);
+
+gulp.task("build", gulp.series("compress"));
+
+gulp.task("default", gulp.series('build', function() {
+    gulp.watch("./src/**/*", gulp.series("compress"));
+    gulp.watch("./src/**/*.js", gulp.series("copy:js"));
+    gulp.watch("./src/**/*.html", gulp.series("copy:html"))
+}));
+
+gulp.task("version", gulp.series("version:xml", "version:json"));
