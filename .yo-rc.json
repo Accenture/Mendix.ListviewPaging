@@ -1,0 +1,13 @@
+{
+  "generator-mendix": {
+    "promptValues": {
+      "copyright": "Objectivity Bespoke Software Specialists Sp. z o.o.",
+      "license": "Apache 2",
+      "author": "Kamil Marcinkowski",
+      "boilerplate": "empty",
+      "widgetoptions": [
+        "templates"
+      ]
+    }
+  }
+}

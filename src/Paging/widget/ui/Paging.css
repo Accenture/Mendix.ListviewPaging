@@ -1,0 +1,49 @@
+.mx-paging {
+  margin: 0;
+  white-space: nowrap;
+  width: auto;
+}
+
+.mx-paging  ul {
+  padding: 0;
+}
+.mx-paging ul a,
+.mx-paging ul li {
+  border-radius: 0;
+  color: black;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  height: auto;
+  letter-spacing: 0.26px;
+  line-height: 38px;
+  min-height: 38px;
+  min-width: 38px;
+  width: auto;
+  text-align: center;
+  padding: 0;
+}
+.mx-paging > ul > li {
+  margin: 0 8px 8px 0;
+}
+.mx-paging ul a.break-view {
+  cursor: default;
+  margin: 0 8px 8px 0;
+}
+.mx-paging > ul > li:last-child {
+  margin-right: 0;
+}
+.mx-paging ul a:hover {
+  cursor: default;
+  text-decoration: none;
+}
+.mx-paging ul li.active:not(.break-view),
+.mx-paging ul li.active:hover:not(.break-view) {
+  color: white;
+  background-color: #007dba;
+}
+.mx-paging ul li:hover:not(.break-view) {
+  color: black;
+  background-color: #DDDDDD;
+}
