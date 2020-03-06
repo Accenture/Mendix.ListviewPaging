@@ -4,8 +4,6 @@ This widget boosts performance of the listview widget by changing and retrieving
 
 Widget can be used in addition to [OQL module](https://appstore.home.mendix.com/link/app/66876/).
 
-Widget supports accessibility WCAG 2.1 AA standard.
-
 ## Typical usage scenario
 It's useful in applications that require listing large quantities of data on the listview widget and e.g.:
 - `Load more` button is not preferable.
