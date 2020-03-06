@@ -129,7 +129,7 @@ define([
                         });
                     }
                     else {
-                        logger.error(this.id + ": An error occurred while executing microflow: " + error.description);
+                        logger.error(this.id + ": An error occurred while updating context object: " + error.description);
                     }
                 }
             });
@@ -143,7 +143,7 @@ define([
                         });
                     }
                     else {
-                        logger.error(this.id + ": An error occurred while executing microflow: " + error.description);
+                        logger.error(this.id + ": An error occurred while updating context object: " + error.description);
                     }
                 }
             });
