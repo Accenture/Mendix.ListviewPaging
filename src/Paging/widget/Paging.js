@@ -47,20 +47,20 @@ define([
                 Add: function (s, f) {
                     for (var i = s; i < f; i++) {
                         if (i == this.page) {
-                            this.code += '<li tabindex="1" data-value="' + i + '" class="active" aria-label="Goto Page ' + i + '">' + i + '</li>';
+                            this.code += '<li tabindex="1" data-value="' + i + '" class="active" aria-label="Goto Page ' + i + '" role="menuitem">' + i + '</li>';
                         } else
-                            this.code += '<li tabindex="1" data-value="' + i + '" aria-label="Goto Page ' + i + '">' + i + '</li>';
+                            this.code += '<li tabindex="1" data-value="' + i + '" aria-label="Goto Page ' + i + '" role="menuitem">' + i + '</li>';
                     }
                 },
 
                 // add last page with separator
                 Last: function () {
-                    this.code += '<a class="break-view">...</a><li tabindex="1"  data-value="' + this.size + '" aria-label="Goto Page ' + this.size + '">' + this.size + '</li>';
+                    this.code += '<a class="break-view">...</a><li tabindex="1"  data-value="' + this.size + '" aria-label="Goto Page ' + this.size + '" role="menuitem">' + this.size + '</li>';
                 },
 
                 // add first page with separator
                 First: function () {
-                    this.code += '<li aria-label="Goto Page 1" tabindex="1" data-value="1">1</li><a class="break-view">...</a>';
+                    this.code += '<li aria-label="Goto Page 1" tabindex="1" data-value="1" role="menuitem">1</li><a class="break-view">...</a>';
                 },
 
 
